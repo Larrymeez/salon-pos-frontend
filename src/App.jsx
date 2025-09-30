@@ -1,14 +1,21 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 
-export default function App() {
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <Router>
       <Navbar />
-      <div className="p-4">
-        <Home />
+      <div className="container mx-auto mt-6">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          {/* We'll add Services, Appointments, Users routes later */}
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
-}
+};
+
+export default App;
