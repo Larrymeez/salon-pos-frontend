@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AppointmentsChart from "../components/AppointmentsChart.jsx";
 
 const Dashboard = () => {
   return (
     <div className="p-6 bg-gray-50 dark:bg-gray-900 min-h-screen">
       {/* Header with interactive logo */}
       <div className="flex items-center gap-4 mb-8">
-        {/* Logo that switches in light/dark mode */}
         <img
           src="/logo-light.png"
           alt="Groomly Logo"
@@ -17,7 +17,6 @@ const Dashboard = () => {
           alt="Groomly Logo"
           className="w-40 h-40 hidden dark:block transition-transform duration-300 hover:scale-110"
         />
-
       </div>
 
       {/* Welcome text */}
@@ -51,6 +50,9 @@ const Dashboard = () => {
           </Link>
         </div>
       </div>
+
+      {/* Chart Section */}
+      <AppointmentsChart />
     </div>
   );
 };
